@@ -109,6 +109,143 @@
                     z-index: 1000;
                 }
             </style>
+			
+			
+			
+			
+<!-- 日历时间开始 -->	
+<script language=JavaScript>
+<!--
+function display_time()
+ {
+ FIRSTYEAR = 1998;
+ LASTYEAR = 2031;
+ today = new Date();
+ SolarYear = today.getFullYear();
+ SolarMonth = today.getMonth() + 1;
+ SolarDate = today.getDate();
+ Weekday = today.getDay();
+ LunarCal = [
+ new tagLunarCal( 27, 5, 3, 43, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1 ),
+ new tagLunarCal( 46, 0, 4, 48, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1 ), /* 88 */
+ new tagLunarCal( 35, 0, 5, 53, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1 ), /* 89 */
+ new tagLunarCal( 23, 4, 0, 59, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+ new tagLunarCal( 42, 0, 1, 4, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+ new tagLunarCal( 31, 0, 2, 9, 1, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0 ),
+ new tagLunarCal( 21, 2, 3, 14, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1 ), /* 93 */
+ new tagLunarCal( 39, 0, 5, 20, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1 ),
+ new tagLunarCal( 28, 7, 6, 25, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1 ),
+ new tagLunarCal( 48, 0, 0, 30, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1 ),
+ new tagLunarCal( 37, 0, 1, 35, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1 ), /* 97 */
+ new tagLunarCal( 25, 5, 3, 41, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+ new tagLunarCal( 44, 0, 4, 46, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1 ),
+ new tagLunarCal( 33, 0, 5, 51, 1, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ),
+ new tagLunarCal( 22, 4, 6, 56, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ), /* 101 */
+ new tagLunarCal( 40, 0, 1, 2, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0 ),
+ new tagLunarCal( 30, 9, 2, 7, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+ new tagLunarCal( 49, 0, 3, 12, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1 ),
+ new tagLunarCal( 38, 0, 4, 17, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0 ), /* 105 */
+ new tagLunarCal( 27, 6, 6, 23, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1 ),
+ new tagLunarCal( 46, 0, 0, 28, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0 ),
+ new tagLunarCal( 35, 0, 1, 33, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ),
+ new tagLunarCal( 24, 4, 2, 38, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1 ), /* 109 */
+ new tagLunarCal( 42, 0, 4, 44, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1 ),
+ new tagLunarCal( 31, 0, 5, 49, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0 ),
+ new tagLunarCal( 21, 2, 6, 54, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1 ),
+ new tagLunarCal( 40, 0, 0, 59, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1 ), /* 113 */
+ new tagLunarCal( 28, 6, 2, 5, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0 ),
+ new tagLunarCal( 47, 0, 3, 10, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1 ),
+ new tagLunarCal( 36, 0, 4, 15, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1 ),
+ new tagLunarCal( 25, 5, 5, 20, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0 ), /* 117 */
+ new tagLunarCal( 43, 0, 0, 26, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1 ),
+ new tagLunarCal( 32, 0, 1, 31, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0 ),
+ new tagLunarCal( 22, 3, 2, 36, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0 ) ];
+ /* 民國年每月之日數 */
+ SolarCal = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+ /* 民國年每月之累積日數, 平年與閏年 */
+SolarDays = [ 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366, 397 ];
+
+ if ( SolarYear <= FIRSTYEAR || SolarYear > LASTYEAR ) return 1;
+ sm = SolarMonth - 1;
+  if ( sm < 0 || sm > 11 ) return 2;
+  leap = GetLeap( SolarYear );
+ if ( sm == 1 )
+  d = leap + 28;
+ else
+  d = SolarCal[sm];
+ if ( SolarDate < 1 || SolarDate > d ) return 3;
+ y = SolarYear - FIRSTYEAR;
+ acc = SolarDays[ leap*14 + sm ] + SolarDate;
+ kc = acc + LunarCal[y].BaseKanChih;
+ Kan = kc % 10;
+ Chih = kc % 12;
+ Age = kc % 60;
+ if ( Age < 22 )
+  Age = 22 - Age;
+ else
+  Age = 82 - Age;
+
+ if ( acc <= LunarCal[y].BaseDays ) {
+  y--;
+  LunarYear = SolarYear - 1;
+  leap = GetLeap( LunarYear );
+  sm += 12;
+  acc = SolarDays[leap*14 + sm] + SolarDate;
+  }
+ else
+  LunarYear = SolarYear;
+   l1 = LunarCal[y].BaseDays;
+ for ( i=0; i<13; i++ ) {
+  l2 = l1 + LunarCal[y].MonthDays[i] + 29;
+  if ( acc <= l2 ) break;
+  l1 = l2;
+  }
+ LunarMonth = i + 1;
+ LunarDate = acc - l1;
+ im = LunarCal[y].Intercalation;
+ if ( im != 0 && LunarMonth > im ) {
+  LunarMonth--;
+  if ( LunarMonth == im ) LunarMonth = -im;
+  }
+ if ( LunarMonth > 12 ) LunarMonth -= 12;
+ today=new Date();
+ function initArray(){
+ this.length=initArray.arguments.length
+ for(var i=0;i<this.length;i++)
+ this[i+1]=initArray.arguments[i] }
+ var d=new initArray("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+ document.write("", today.getFullYear(),"年",today.getMonth()+1,"月",today.getDate(),"日 ",d[today.getDay()+1],"");
+ months = ["一","二","三","四","五","六","七","八","九","十","十一","十二"];
+ days = ["初一","初二","初三","初四","初五","初六","初七","初八","初九","初十","十一","十二","十三","十四","十五","十六","十七","十八","十九","二十","廿一","廿二","廿三","廿四","廿五","廿六","廿七","廿八","廿九","三十"];
+  document.write( " 农历"+months[LunarMonth-1]+"月" + days[LunarDate-1] + "");
+ return 0;
+}
+ /* 求此民國年是否為閏年, 返回 0 為平年, 1 為閏年 */
+function GetLeap( year )
+ {
+ if ( year % 400 == 0 )
+ return 1;
+ else if ( year % 100 == 0 )
+ return 0;
+ else if ( year % 4 == 0 )
+ return 1;
+ else
+ return 0;
+ }
+function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13) {
+ this.BaseDays = d; /* 到民國 1 月 1 日到農曆正月初一的累積日數 */
+ this.Intercalation = i; /* 閏月月份. 0==此年沒有閏月 */
+ this.BaseWeekday = w; /* 此年民國 1 月 1 日為星期幾再減 1 */
+ this.BaseKanChih = k; /* 此年民國 1 月 1 日之干支序號減 1 */
+ this.MonthDays = [ m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13 ]; /* 此農曆年每月之大小, 0==小月(29日), 1==大月(30日) */
+}
+//-->
+</script>
+<FONT color=#ffffff><script>display_time();</script></FONT>
+<!-- 日历时间结束 -->	
+			
+				
+			
             <div id="he-plugin-simple"></div>
                 <script>
                 WIDGET = {
@@ -134,6 +271,7 @@
                 }
                 </script>
                 <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+						
             </div>
     </nav>
     <!--topbar结束-->
@@ -163,208 +301,39 @@
             </div>
         </div>
         <!--搜索结束-->
-<!--        <ul class="mylist row">
-            <li class="title"><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-gongju"></use>
-              </svg>我的必备</li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://translate.google.cn/?hl=zh-CN"
-                target="_blank"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-fanyi"></use>
-                </svg><span>谷歌翻译</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://github.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-GitHub"></use>
-                </svg><span>Github</span></a></li>
-             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.aliyun.com/1111/home?userCode=0ra0fkub"
-                target="_blank"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-yun"></use>
-                </svg><span>阿里云</span></a></li>				
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://tool.chinaz.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-wangzhan"></use>
-                </svg><span>站长工具</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.ip138.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-hulianwang-hover"></use>
-                </svg><span>IP138</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://www.1234i.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-IP"></use>
-                </svg><span>IP查询</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://www.jsons.cn/port/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-hulianwang-hover"></use>
-                </svg><span>端口查询</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://pan.baidu.com" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-baiduwangpan"></use>
-                </svg><span>百度网盘</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://mp.weixin.qq.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-weixin"></use>
-                </svg><span>微信公众号</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://mp.toutiao.com/profile_v4/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-toutiao"></use>
-                </svg><span>头条号</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://www.w3school.com.cn/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-html"></use>
-                </svg><span>W3school</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://msdn.itellyou.cn/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-weiruan-"></use>
-                </svg><span>MSDN</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://ziyuan.baidu.com/dashboard/index"
-                target="_blank"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-baidu"></use>
-                </svg><span>百度站长</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://tongji.baidu.com/web/welcome/login"
-                target="_blank"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-tongji"></use>
-                </svg><span>百度统计</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.17ce.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-cesu"></use>
-                </svg><span>网站测速</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.umeng.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-youmengtongjicopy"></use>
-                </svg><span>友盟+</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://tool.lu/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-gongju1"></use>
-                </svg><span>在线工具</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://tower.im/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-T"></use>
-                </svg><span>Tower</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://portal.qiniu.com/signup?code=1hhiin0m4s18y"
-                target="_blank"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-yun1"></use>
-                </svg><span>七牛云</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://fztool.ptcms.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-web"></use>
-                </svg><span>仿站工具箱</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://cli.im/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-erweima1"></use>
-                </svg><span>草料二维码</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.iconfont.cn/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-iconfont"></use>
-                </svg><span>阿里图标</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://app.xunjiepdf.com/ocr/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-jingxuan"></use>
-                </svg><span>ORC识别</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://wx.qq.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-weixin"></use>
-                </svg><span>微信网页版</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://ps.gaoding.com/#/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-PS"></use>
-                </svg><span>在线PS</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://mirrors.163.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-wangyi1"></use>
-                </svg><span>网易镜像源</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-acrrongqijingxiangfuwu"></use>
-                </svg><span>清华镜像源</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://mirrors.ustc.edu.cn/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-hulianwang-hover"></use>
-                </svg><span>中科大镜像</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://c.runoob.com/more/svgeditor/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-hulianwang-hover"></use>
-                </svg><span>SVG编辑</span></a></li>
-          </ul> -->
         
           <ul class="mylist row">
             <li class="title"><svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-bizhishezhi"></use>
               </svg>常用</li>
+			  
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://translate.google.cn/?hl=zh-CN"
                 target="_blank"><svg class="icon" aria-hidden="true">
                   <use xlink:href="#icon-fanyi"></use>
                 </svg><span>谷歌翻译</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://github.com/" target="_blank"><svg
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.zhihu.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-GitHub"></use>
-                </svg><span>Github</span></a></li>
+                  <use xlink:href="#icon-zhihu"></use>
+                </svg><span>知乎</span></a></li>
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.jianshu.com/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-jianshu"></use>
+                </svg><span>简书</span></a></li>
 				
-<!--             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://chenpot.com/" target="_blank"><svg
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.douban.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-COFFEEPOT"></use>
-                </svg><span>陈壶</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://defcon.cn/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-D"></use>
-                </svg><span>DEFCON</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.hanost.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-H"></use>
-                </svg><span>智慧宫</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://lusongsong.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-huabanwang"></use>
-                </svg><span>卢松松博客</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.zcool.com.cn/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-zhanku"></use>
-                </svg><span>站酷</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.tmtpost.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-T2"></use>
-                </svg><span>钛媒体</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://www.iheima.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-hulianwang-hover"></use>
-                </svg><span>i黑马</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://sspai.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-hulianwang-hover"></use>
-                </svg><span>少数派</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.36kr.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-36kr"></use>
-                </svg><span>36氪</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.cnblogs.com/liuhanxu" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-hulianwang-hover"></use>
-                </svg><span>博客园</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.huxiu.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-huhu"></use>
-                </svg><span>虎嗅网</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.iplaysoft.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-hulianwang-hover"></use>
-                </svg><span>异次元</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.leiphone.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-L"></use>
-                </svg><span>雷锋网</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.ithome.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-IT"></use>
-                </svg><span>IT之家</span></a></li> -->
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://wangchujiang.com/linux-command/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-linux"></use>
-                </svg><span>Linux命令</span></a></li>
+                  <use xlink:href="#icon-douban"></use>
+                </svg><span>豆瓣</span></a></li>
+			
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.52pojie.cn/" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-wangzhan"></use>
+                  <use xlink:href="#icon-hulianwang-hover"></use>
                 </svg><span>吾爱破解</span></a></li>
 			<li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.ghxi.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-web"></use>
+                  <use xlink:href="#icon-hulianwang-hover"></use>
                 </svg><span>果核剥壳</span></a></li>
 
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.cnblogs.com/liuhanxu" target="_blank"><svg
@@ -372,33 +341,44 @@
                   <use xlink:href="#icon-hulianwang-hover"></use>
                 </svg><span>博客园</span></a></li>
 
-
           </ul>
         
           <ul class="mylist row">
             <li class="title"><svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-tongji"></use>
               </svg>编程</li>
+				
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://github.com/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-GitHub"></use>
+                </svg><span>Github</span></a></li>
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.linuxcool.com/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-linux"></use>
+                </svg><span>Linux命令</span></a></li>
+				  
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.runoob.com/"
                 target="_blank"><svg class="icon" aria-hidden="true">
                   <use xlink:href="#icon-hulianwang-hover"></use>
                 </svg><span>菜鸟教程</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://shop.defcon.cn/index.php/top100"
+	
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.liaoxuefeng.com/"
                 target="_blank"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-gouwu"></use>
-                </svg><span>淘宝特卖</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://shop.defcon.cn/index.php/jiu" target="_blank"><svg
+                  <use xlink:href="#icon-hulianwang-hover"></use>
+                </svg><span>廖雪峰博客</span></a></li>			
+				
+
+<!--             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://mirrors.163.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-jiubaoyou"></use>
-                </svg><span>九块九</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://shop.defcon.cn/" target="_blank"><svg
+                  <use xlink:href="#icon-wangyi1"></use>
+                </svg><span>网易镜像源</span></a></li>
+				
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://mirrors.ustc.edu.cn/" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-pinduoduo1"></use>
-                </svg><span>拼多多</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.jd.com" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-jingdong"></use>
-                </svg><span>京东</span></a></li>
+                  <use xlink:href="#icon-hulianwang-hover"></use>
+                </svg><span>中科大镜像</span></a></li> -->
+
           </ul>
         
           <ul class="mylist row">
@@ -426,23 +406,75 @@
                   <use xlink:href="#icon-LiveHotmailyouxiang"></use>
                 </svg><span>江大邮箱</span></a></li>
           </ul>
+
+          <ul class="mylist row">
+            <li class="title"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-SCDNanquanjiasu"></use>
+              </svg>网盘</li>
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://pan.baidu.com/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-baiduwangpan"></use>
+                </svg><span>百度网盘</span></a></li>
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.aliyundrive.com/drive" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-CN_acfuntv"></use>
+                </svg><span>阿里网盘</span></a></li>
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.lanzou.com/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-yun"></use>
+                </svg><span>蓝奏云</span></a></li>				
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.jianguoyun.com/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-v1"></use>
+                </svg><span>坚果云</span></a></li>
+
+          </ul>
+
+          <ul class="mylist row">
+            <li class="title"><svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-faqisikao"></use>
+              </svg>科研</li>
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://scholar.google.com/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-gugesousuo"></use>
+                </svg><span>Google学术</span></a></li>
+				
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://sci-hub.tw/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-H"></use>
+                </svg><span>Sci Hub</span></a></li>
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.ieee.org/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-sousuo1"></use>
+                </svg><span>IEEE</span></a></li>
+				
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://webvpn1.jiangnan.edu.cn/login" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-sousuo"></use>
+                </svg><span>江大VPN</span></a></li>
+          </ul>
         
           <ul class="mylist row">
             <li class="title"><svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-shipin"></use>
               </svg>娱乐</li>
 
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.youtube.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-youtube"></use>
-                </svg><span>YouTube</span></a></li>
-			  
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.bilibili.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-bilibili"></use>
                 </svg><span>哔哩哔哩</span></a></li>
 
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.iqiyi.com/" target="_blank"><svg
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.youtube.com/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-youtube"></use>
+                </svg><span>YouTube</span></a></li>
+			  
+<!--             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.iqiyi.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-aiqiyi"></use>
                 </svg><span>爱奇艺</span></a></li>
@@ -455,7 +487,7 @@
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.youku.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-youku"></use>
-                </svg><span>优酷</span></a></li>
+                </svg><span>优酷</span></a></li> -->
 
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.taobao.com/?pid=mm_42906684_606250477_109128500301"
                 target="_blank"><svg class="icon" aria-hidden="true">
@@ -466,34 +498,32 @@
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-jingdong"></use>
                 </svg><span>京东</span></a></li>
-				
           </ul>
         
-          <ul class="mylist row">
+<!--           <ul class="mylist row">
             <li class="title"><svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-weixin"></use>
-              </svg>社交平台</li>
-<!--             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.weibo.com" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-weibo"></use>
-                </svg><span>微博</span></a></li> -->
+              </svg>社交</li>
+
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.zhihu.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-zhihu"></use>
                 </svg><span>知乎</span></a></li>
-<!--             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.douban.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-douban"></use>
-                </svg><span>豆瓣</span></a></li> -->
+
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.jianshu.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-jianshu"></use>
                 </svg><span>简书</span></a></li>
 				
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://mp.weixin.qq.com/" target="_blank"><svg
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.douban.com/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-douban"></use>
+                </svg><span>豆瓣</span></a></li>				
+				
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://wx.qq.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-weixin"></use>
-                </svg><span>微信公众号</span></a></li>
+                </svg><span>微信网页版</span></a></li>				
 				
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.twitter.com" target="_blank"><svg
                   class="icon" aria-hidden="true">
@@ -504,55 +534,62 @@
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-Facebook"></use>
                 </svg><span>Facebook</span></a></li>
-          </ul>
+          </ul> -->
         
           <ul class="mylist row">
             <li class="title"><svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-sousuo"></use>
-              </svg>搜索引擎</li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.google.com/" target="_blank"><svg
+              </svg>资源</li>
+			  
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://pixabay.com/zh/" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-gugesousuo"></use>
-                </svg><span>Google</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.bing.com/" target="_blank"><svg
+                  <use xlink:href="#icon-tupian"></use>
+                </svg><span>Pixabay</span></a></li>
+				
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.pexels.com/zh-cn/" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-bing"></use>
-                </svg><span>Bing</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.baidu.com/" target="_blank"><svg
+                  <use xlink:href="#icon-tupian"></use>
+                </svg><span>Pexels</span></a></li>
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-baidu"></use>
-                </svg><span>百度</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.sogou.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-sougou"></use>
-                </svg><span>搜狗</span></a></li>
+                  <use xlink:href="#icon-acrrongqijingxiangfuwu"></use>
+                </svg><span>清华镜像源</span></a></li>				
+				
           </ul>
 
           <ul class="mylist row">
             <li class="title"><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-faqisikao"></use>
-              </svg>科研</li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.google.com/" target="_blank"><svg
+                <use xlink:href="#icon-xitongshezhi"></use>
+              </svg>工具</li>
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://www.cxy521.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-gugesousuo"></use>
-                </svg><span>Google</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.bing.com/" target="_blank"><svg
+                  <use xlink:href="#icon-bizhishezhi"></use>
+                </svg><span>程序员导航</span></a></li>
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://tool.lu/" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-bing"></use>
-                </svg><span>Bing</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.baidu.com/" target="_blank"><svg
+                  <use xlink:href="#icon-gongju1"></use>
+                </svg><span>在线工具</span></a></li>
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://mp.weixin.qq.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-baidu"></use>
-                </svg><span>百度</span></a></li>
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://webvpn1.jiangnan.edu.cn/login" target="_blank"><svg
+                  <use xlink:href="#icon-weixin"></use>
+                </svg><span>微信公众号</span></a></li>
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://xiumi.us/#/studio/papers" target="_blank"><svg
                   class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-sousuo"></use>
-                </svg><span>江大VPN</span></a></li>
+                  <use xlink:href="#icon-bianjiqi-"></use>
+                </svg><span>秀米</span></a></li>
           </ul>
 
 
+
+
     </div>
-    
+
+
     <p class="mt-4 mb-2 text-muted text-center">©2021 by <a href="https://liupaopao.top/">paopao</a>. All Rights Reserved. </p>
 	<p id="hitokoto" class="mt-0 mb-4 text-muted text-center">:D 获取中...</p>	
 	<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
