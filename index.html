@@ -12,8 +12,8 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="full-screen" content="yes">
-    <meta name="Keywords" content="网址导航,博客大全,博客导航,优秀博客大全,独立博客,博客网址,个人博客,zblog博客，WordPress博客" />
-    <meta name="Description" content="口袋导航是收录优秀网站最多，业界最权威的独立导航网站，加入网站导航能为您的网站带来流量。" />
+    <meta name="Keywords" content="网址导航" />
+    <meta name="Description" content="个人导航。" />
     <!--UC强制全屏-->
     <meta name="browsermode" content="application">
     <!--UC应用模式-->
@@ -47,7 +47,9 @@
         </video-->
         <!--注释掉图片可换成视频版本-->
         <img src="https://cn.bing.com/th?id=OHR.ChurchRock_ZH-CN6926315999_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp" alt="我的导航">
-        <div class="bottom-cover" style="background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(244 248 251 / 0.6) 50%, rgb(244 248 251) 100%);"></div>
+		<!--修改原始背景图片为本地图片-->
+		<!-- <img src="./images/background.png" alt="我的导航">
+        <div class="bottom-cover" style="background-image: linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(244 248 251 / 0.6) 50%, rgb(244 248 251) 100%);"></div> -->
     </div>
     <!--topbar开始-->
     <style>
@@ -130,10 +132,7 @@
                     z-index: 1000;
                 }
             </style>
-			
-			
-			
-			
+
 <!-- 日历时间开始 -->	
 <script language=JavaScript>
 <!--
@@ -236,7 +235,7 @@ SolarDays = [ 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365, 396, 0
  this[i+1]=initArray.arguments[i] }
  var d=new initArray("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
  document.write("", today.getFullYear(),"年",today.getMonth()+1,"月",today.getDate(),"日 ",d[today.getDay()+1],"");
- months = ["一","二","三","四","五","六","七","八","九","十","十一","十二"];
+ months = ["正","二","三","四","五","六","七","八","九","十","十一","腊"];
  days = ["初一","初二","初三","初四","初五","初六","初七","初八","初九","初十","十一","十二","十三","十四","十五","十六","十七","十八","十九","二十","廿一","廿二","廿三","廿四","廿五","廿六","廿七","廿八","廿九","三十"];
   document.write( " 农历"+months[LunarMonth-1]+"月" + days[LunarDate-1] + "");
  return 0;
@@ -302,8 +301,18 @@ function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, 
             <div id="search-list" class="hide-type-list">
                 <div class="search-group group-a s-current" style="padding-left: 20px">
                     <ul class="search-type">
-                        <li><input checked="" hidden="" type="radio" name="type" id="type-baidu" value="https://www.baidu.com/s?wd=" data-placeholder="百度一下"><label for="type-baidu"><span style="color:#2100E0">百度</span></label></li>
-                        <li><input hidden="" type="radio" name="type" id="type-google" value="https://www.google.com.hk/search?hl=zh-CN&q=" data-placeholder="谷歌搜索"><label for="type-google"><span style="color:#3B83FA">G</span><span style="color:#F3442C">o</span><span style="color:#FFC300">o</span><span style="color:#4696F8">g</span><span style="color:#2CAB4E">l</span><span style="color:#F54231">e</span></label></li>
+                        <li><input hidden="" type="radio" name="type" id="type-google" value="https://www.google.com/search?q=" data-placeholder="谷歌搜索"><label for="type-google"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-gugesousuo"></use></svg><span style="color:#3B83FA">G</span><span style="color:#F3442C">o</span><span style="color:#FFC300">o</span><span style="color:#4696F8">g</span><span style="color:#2CAB4E">l</span><span style="color:#F54231">e</span></label></li>
+
+						<li><input checked="" hidden="" type="radio" name="type" id="type-baidu" value="https://www.baidu.com/s?wd=" data-placeholder="百度搜索"><label for="type-baidu"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-baidu"></use></svg><b>百 度&nbsp;&nbsp;&nbsp;</b></label></li>
+
+						<li><input checked="" hidden="" type="radio" name="type" id="type-bing" value="https://cn.bing.com/search?q=" data-placeholder="必应搜索"><label for="type-bing"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bing"></use></svg><b>必 应&nbsp;&nbsp;&nbsp;</b></label></li>
+
+						<li><input checked="" hidden="" type="radio" name="type" id="type-github" value="https://github.com/search?q=" data-placeholder="Github搜索"><label for="type-github"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-GitHub"></use></svg><b>Github&nbsp;&nbsp;</b></label></li>
+
+						<li><input hidden="" type="radio" name="type" id="type-zhihu" value="https://www.zhihu.com/search?q=" data-placeholder="知乎搜索"><label for="type-zhihu"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhihu"></use></svg><b>知 乎&nbsp;&nbsp;&nbsp;</b></label></li>
+
+						<li><input hidden="" checked="" type="radio" name="type" id="type-fanyi" value="https://fanyi.baidu.com/#zh/en/" data-placeholder="输入翻译内容（自动检测语言）"><label for="type-fanyi"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-fanyi"></use></svg><b>在线翻译</b></label></li>
+
 <!--                         <li><input hidden="" type="radio" name="type" id="type-duck" value="http://shop.defcon.cn/" data-placeholder="搜索淘宝天猫优惠券"><label for="type-duck"><span style="color:#b1870b">搜券</span></label></li>
                         <li><input hidden="" type="radio" name="type" id="type-quan" value="https://s.weibo.com/weibo?q=" data-placeholder="微博热门搜索"><label for="type-quan"><span style="color:#ff5722">微博</span></label></li>
                         <li><input hidden="" type="radio" name="type" id="type-drive" value="https://disk.misiai.com/search?what=disk&kw=" data-placeholder="影视、小说、网盘"><label for="type-drive"><span style="color:#e91e63">网盘</span></label></li> -->
@@ -327,6 +336,11 @@ function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, 
             <li class="title"><svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-bizhishezhi"></use>
               </svg> 常用</li>
+
+			<li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://weixin.sogou.com/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-sougou"></use>
+                </svg><span>微信搜索</span></a></li>
 
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://github.com/HanxuLiu" target="_blank"><svg
                   class="icon" aria-hidden="true">
@@ -353,83 +367,20 @@ function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, 
                   <use xlink:href="#icon-zhihu"></use>
                 </svg><span>知乎</span></a></li>
 
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.jianshu.com/" target="_blank"><svg
+<!-- 			<li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.jianshu.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-jianshu"></use>
                 </svg><span>简书</span></a></li>
-				
+
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.douban.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-douban"></use>
-                </svg><span>豆瓣</span></a></li>
+                </svg><span>豆瓣</span></a></li> -->
 
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.bilibili.com/" target="_blank"><svg
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-bilibili"></use>
-                </svg><span>哔哩哔哩</span></a></li>			
-				
-<!--        <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.cnblogs.com/liuhanxu" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-hulianwang-hover"></use>
-                </svg><span>博客园</span></a></li> -->
-
-          </ul>
-        
-          <ul class="mylist row">
-            <li class="title"><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-tongji"></use>
-              </svg> 学习</li>
-						
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.linuxcool.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-linux"></use>
-                </svg><span>Linux命令</span></a></li>
-				  
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.runoob.com/"
-                target="_blank"><svg class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-yepian"></use>
-                </svg><span>菜鸟教程</span></a></li>		
-
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://meiriyiwen.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-faqisikao"></use>
-                </svg><span>每日一文</span></a></li>
-								
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://webvpn1.jiangnan.edu.cn/login" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-sousuo"></use>
-                </svg><span>江大VPN</span></a></li>
-
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://liu-paopao.github.io/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-bianjiqi-"></use>
-                </svg><span>my-blog1</span></a></li>
-
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://hanxuliu.github.io/myblog-butterfly/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-bianjiqi-"></use>
-                </svg><span>my-blog2</span></a></li>
-
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://liuhanxu.gitee.io/pdf" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-bianjiqi-"></use>
-                </svg><span>my-pdf</span></a></li>
-
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://hanxuliu.github.io/learn-debugger/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-bianjiqi-"></use>
-                </svg><span>learn-debugger</span></a></li>				
-
-<!--             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://mirrors.163.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-wangyi1"></use>
-                </svg><span>网易镜像源</span></a></li>
-				
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://mirrors.ustc.edu.cn/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-hulianwang-hover"></use>
-                </svg><span>中科大镜像</span></a></li> -->
-
+                </svg><span>哔哩哔哩</span></a></li>
           </ul>
 
           <ul class="mylist row">
@@ -456,9 +407,7 @@ function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, 
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-v1"></use>
                 </svg><span>坚果云</span></a></li>
-
           </ul>
-        
 <!--           <ul class="mylist row">
             <li class="title"><svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-shipin"></use>
@@ -499,43 +448,6 @@ function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, 
                   <use xlink:href="#icon-jingdong"></use>
                 </svg><span>京东</span></a></li>
           </ul> -->
-        
-<!--           <ul class="mylist row">
-            <li class="title"><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-weixin"></use>
-              </svg>社交</li>
-
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.zhihu.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-zhihu"></use>
-                </svg><span>知乎</span></a></li>
-
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.jianshu.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-jianshu"></use>
-                </svg><span>简书</span></a></li>
-				
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.douban.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-douban"></use>
-                </svg><span>豆瓣</span></a></li>				
-				
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://wx.qq.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-weixin"></use>
-                </svg><span>微信网页版</span></a></li>				
-				
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.twitter.com" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-tuite"></use>
-                </svg><span>Twitter</span></a></li>
-				
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.facebook.com" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-Facebook"></use>
-                </svg><span>Facebook</span></a></li>
-          </ul> -->
-
 
           <ul class="mylist row">
             <li class="title"><svg class="icon" aria-hidden="true">
@@ -587,6 +499,11 @@ function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, 
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-bianjiqi-"></use>
                 </svg><span>秀米</span></a></li>
+
+            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://meiriyiwen.com/" target="_blank"><svg
+                  class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-faqisikao"></use>
+                </svg><span>每日一文</span></a></li>
 			  	
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://msdn.itellyou.cn/" target="_blank"><svg
                   class="icon" aria-hidden="true">
@@ -596,56 +513,13 @@ function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, 
             <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://mirrors.tuna.tsinghua.edu.cn/" target="_blank"><svg
                   class="icon" aria-hidden="true">
                   <use xlink:href="#icon-acrrongqijingxiangfuwu"></use>
-                </svg><span>清华镜像源</span></a></li>				
-
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://pixabay.com/zh/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-tupian"></use>
-                </svg><span>Pixabay</span></a></li>
-				
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://www.pexels.com/zh-cn/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-tupian"></use>
-                </svg><span>Pexels</span></a></li>
-				
+                </svg><span>清华镜像源</span></a></li>
           </ul>
-
-<!--           <ul class="mylist row">
-            <li class="title"><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-xitongshezhi"></use>
-              </svg>工具</li>
-
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="http://www.cxy521.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-bizhishezhi"></use>
-                </svg><span>程序员导航</span></a></li>
-
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://tool.lu/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-gongju1"></use>
-                </svg><span>在线工具</span></a></li>
-
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://mp.weixin.qq.com/" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-weixin"></use>
-                </svg><span>微信公众号</span></a></li>
-
-            <li class="col-3 col-sm-3 col-md-3 col-lg-1"><a rel="nofollow" href="https://xiumi.us/#/studio/papers" target="_blank"><svg
-                  class="icon" aria-hidden="true">
-                  <use xlink:href="#icon-bianjiqi-"></use>
-                </svg><span>秀米</span></a></li>
-          </ul> -->
-
-
-
-
     </div>
 
-
-    <p class="mt-4 mb-2 text-muted text-center">©2021 by <a href="https://liupaopao.top/">paopao</a>. All Rights Reserved. </p>
+    <p class="mt-4 mb-2 text-muted text-center">©2024 by <a href="https://liupaopao.top/">paopao</a>. All Rights Reserved. </p>
 	<p id="hitokoto" class="mt-0 mb-4 text-muted text-center">:D 获取中...</p>	
 	<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
-
 
     <script>
     eval(function(e, t, a, c, i, n) {
@@ -683,7 +557,6 @@ function tagLunarCal( d, i, w, k, m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, 
     });
     </script>
     <!-- 代码 结束 -->
-
 
 </body>
 
