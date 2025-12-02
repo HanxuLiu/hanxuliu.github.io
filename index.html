@@ -470,6 +470,15 @@
     line-height: 1.0; /* 保持与文字相同的行高，确保垂直对齐 */
 }
 
+/* 超链接在手机端显示过长的问题 */
+    .break-link {
+        word-wrap: break-word;      /* 旧版浏览器 */
+        word-break: break-all;      /* 所有字符处换行 */
+        overflow-wrap: break-word;  /* 新版标准 */
+        display: inline-block;
+        max-width: 100%;
+    }
+
             /* 个人特长样式增强 */
             /* 
              * 样式规则集，用于定义 `#specialty-card` 元素内的段落 (`p`) 的样式。
@@ -736,11 +745,15 @@
                             <h3 class="timeline-title">江南大学（双一流、211院校） - 电子与通信工程 - 排名前10%</h3>
 							<ul class="custom-list">
 								<li> SCI论文《车联网中强化学习算法设计》
-								<br>发表在期刊《IEEE Internet of Things Journal》
-								<br>链接：<a href=https://ieeexplore.ieee.org/document/8896964>https://ieeexplore.ieee.org/document/8896964</a></li>
+									<br>发表在期刊《IEEE Internet of Things Journal》
+									<br>链接：<a href="https://ieeexplore.ieee.org/document/8896964" class="break-link">
+									https://ieeexplore.ieee.org/document/8896964 </a>
+								</li>
 								<li> SCI论文《用户移动轨迹保护方案设计》
-								<br>发表在期刊《Electronics》
-								<br>链接：<a href=https://doi.org/10.3390/electronics8020148>https://doi.org/10.3390/electronics8020148</a></li>
+									<br>发表在期刊《Electronics》
+									<br>链接：<a href=https://doi.org/10.3390/electronics8020148 class="break-link">
+									https://doi.org/10.3390/electronics8020148</a>
+								</li>
 								<li>江南大学优秀研究生、江南大学一等奖学金、担任班干部</li>
 								<li>无锡马拉松志愿者、世界物联网博览会志愿者</li>
 							</ul>
