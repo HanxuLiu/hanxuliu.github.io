@@ -456,7 +456,7 @@
 .custom-list li {
     position: relative; /* 设置为相对定位，使其成为伪元素的定位参考 */
     margin-bottom: 8px; /* 每个列表项之间的垂直间距 */
-    color: #000000; /* 列表项文字颜色设为黑色 */
+    color: #4a5568; /* 列表项文字颜色一致 */
     line-height: 1.2; /* 行高为字体大小的1.6倍，改善可读性 */
     padding-left: 15px; /* 左侧内边距，防止文字与自定义点重叠 */
 }
@@ -595,7 +595,7 @@
             /* 工作经历和成果中的正文-描述样式 */
             .info-description-1 {
                 font-size: 1.05rem; /* 字体大小 */
-                color: #1a202c; /* 字体颜色 黑色*/
+                color: #1a202c; /* 字体颜色*/
                 line-height: 1.6; /* 行高 */
             }
 
@@ -795,7 +795,9 @@
                             <ul class="custom-list">
                             <li>申威AI芯片“攻关先锋”奖、研究院“年度先进个人”奖、研究院“大干之星”奖</li>
                             <li>1篇论文 <a href=https://hanxuliu.github.io/pdf-web/paper/gdb_reverse_debugging/index.html class="break-link">《面向申威平台的反向调试技术研究》</a></li>
-                            <li>3篇专利<a href=https://hanxuliu.github.io/pdf-web/patent/lldb_hardware_watchpoint/index.html class="break-link">《一种硬件支持的观察点调试方法》</a>《一种程序调试方法》《一种基于申威架构的线程并行程序性能分析方法及系统》</li>
+                            <li>3篇专利<a href=https://hanxuliu.github.io/pdf-web/patent/lldb_hardware_watchpoint/index.html class="break-link">《一种硬件支持的观察点调试方法》</a>
+                                <a href=https://hanxuliu.github.io/pdf-web/patent/gdb_reverse_debugging/index.html class="break-link">《一种程序调试方法》</a>
+                                <a href=https://hanxuliu.github.io/pdf-web/patent/hpctoolkit/index.html class="break-link">《一种基于申威架构的线程并行程序性能分析方法及系统》</a></li>
                             <li>2篇软著《申威LLDB调试器软件》《申威Systemtap跟踪和探测工具软件》</li>
                             <li>计算机技术与软件专业技术资格：软件设计师（中级）认证</li>
                 </ul>
@@ -862,8 +864,8 @@
                     </div>
 
                     <div class="info-item">
-                        <h3 class="info-title">参与阿里数据工程项目攻关查错</h3>
-                        <p class="info-date">2021年9月 阿里云大数据适配coredump查错</p>
+                        <h3 class="info-title">阿里数据工程项目攻关查错</h3>
+                        <p class="info-date">2021年9月 阿里云大数据适配遇到段错误</p>
                         <p class="info-description">在阿里数据工程适配项目中，出现boost协程库coredump问题。时值疫情严峻，逆流而上出差北京，展开持续29天的查错攻关，
                             深挖出一系列申威底层特性相关错误，涉及编译器优化、上下文切换、寄存器配置等方面，解决阻碍项目进展2个多月的卡点。
                             <br>相关证明链接：<a href=https://developer.wxiat.cn class="break-link">查错攻关报告</a>
@@ -872,7 +874,7 @@
                     </div>
 
                     <div class="info-item">
-                        <h3 class="info-title">参与天翼云项目紧急攻关查错</h3>
+                        <h3 class="info-title">天翼云项目紧急攻关查错</h3>
                         <p class="info-date">2023年9月 天翼云VPP服务适配coredump查粗</p>
                         <p class="info-description">在天翼云适配项目中，出现vpp服务异崩溃问题。深挖出底层特性相关报错，覆盖堆栈地址分配、共享地址非法覆写、
                             memset内存操作的粒度等方面，保障项目追赶上计划进度。
