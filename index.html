@@ -786,18 +786,19 @@
                             <h3 class="timeline-title">无锡先进技术研究院 - 技术研发副主管</h3>
                             <br><p class="info-description-1">先后在语言编译研发部(编译工具链研发工程师)、生态软件研发部(基础软件研发工程师)两个部门工作,
                                 完成申威GDB反向调试(Reverse Debugging)高级功能开发, 使SW64成为第4个成功支持的架构(仅次于x86/arm/ppc);
+                                丰富了gdb的版本谱系，迄今为止，申威平台已具备gdb7.12/8.2.1/9.1/10.1共4个版本，已覆盖申威421、6A、6B、8A、太湖-1等平台。
                                 完成申威LLDB框架设计和功能代码编写, 从零突破首次实现SW64架构支持; 充分挖掘CPU硬件特性, 实现LLDB硬件观察点功能，
                                 匹配速度提升数十倍. 突破“调试工具+大模型”技术融合探索，实现AI赋能工作效率. 完成申威插桩工具Dyninst、图形化调优工具HPCToolkit研发;
                                 带领新人完成申威Systemtap、Ltrace工具开发. 累计开展3次以调试调优为主题的技术培训授课，分享软件调试技巧，提升同事软件开发效率.
                                 累计向申威社区、厂商、部门内外同事提供调试技术支持60+次，解决开发者用户遇到的调试难题80+项.
                                 实现了取得了从“职场小白->技术骨干->牵头骨干”的个人进步和成长. 目前正带领3人开展申威AI芯片研发项目攻关，
-                                完成芯片调试和性能计数器功能验证, 已实现面向AI卡的debugger和profiler代码雏形.</p><br>
+                                完成芯片调试和性能计数器功能验证, 已实现面向AI卡的debugger和profiler代码雏形.，输出技术文档十余篇</p><br>
                             <ul class="custom-list">
                             <li>申威AI芯片“攻关先锋”奖、研究院“年度先进个人”奖、研究院“大干之星”奖</li>
-                            <li>1篇论文 <a href=https://hanxuliu.github.io/pdf-web/paper/gdb_reverse_debugging/index.html class="break-link">《面向申威平台的反向调试技术研究》</a></li>
-                            <li>3篇专利<a href=https://hanxuliu.github.io/pdf-web/patent/lldb_hardware_watchpoint/index.html class="break-link">《一种硬件支持的观察点调试方法》</a>
-                                <a href=https://hanxuliu.github.io/pdf-web/patent/gdb_reverse_debugging/index.html class="break-link">《一种程序调试方法》</a>
-                                <a href=https://hanxuliu.github.io/pdf-web/patent/hpctoolkit/index.html class="break-link">《一种基于申威架构的线程并行程序性能分析方法及系统》</a></li>
+                            <li>1篇论文 <a href=https://hanxuliu.github.io/pdf-web/paper/paper_gdb.html class="break-link">《面向申威平台的反向调试技术研究》</a></li>
+                            <li>3篇专利<a href=https://hanxuliu.github.io/pdf-web/patent/patent_lldb.html class="break-link">《一种硬件支持的观察点调试方法》</a>
+                                <a href=https://hanxuliu.github.io/pdf-web/patent/patent_gdb.html class="break-link">《一种程序调试方法》</a>
+                                <a href=https://hanxuliu.github.io/pdf-web/patent/patent_hpc.html class="break-link">《一种基于申威架构的线程并行程序性能分析方法及系统》</a></li>
                             <li>2篇软著《申威LLDB调试器软件》《申威Systemtap跟踪和探测工具软件》</li>
                             <li>计算机技术与软件专业技术资格：软件设计师（中级）认证</li>
                 </ul>
@@ -831,8 +832,13 @@
                     <div class="info-item">
                         <h3 class="info-title">自主架构服务器芯片研发项目</h3>
                         <p class="info-date">2021年12月 - 2024年12月</p>
-                        <p class="info-description">项目目标是打破win+intel垄断，实现一套自主架构处理器平台进行国产化替代。项目共6个子课题，本人负责课题6《面向自主架构的开发支撑技术》核心研发工作，在自主指令集架构SW64（RISC）平台，从零实现gdb、lldb、delve三大调试器架构支持，已被阿里、统信、等十几家合作厂商广泛使用，并开源至申威开源社区，输出技术文档十余篇。
-在XX科技有限公司实习，负责参与开发公司内部管理系统，主要负责前端页面的设计与实现，提升了实际项目开发能力。
+                        <p class="info-description">负责子课题《面向自主架构的开发支撑技术》研发，基于申威自主指令集架构SW64，
+                            ①完成申威LLDB框架设计、功能代码编写、测试集验证，从零突破首次实现SW64架构支持；解决LLDB与Clang表达式解析器兼容问题，
+                            实现对 LLVM JIT 和 Disassembler 模块集成，成功支持断点/反汇编/查看寄存器/查看内存/远程调试/多线程调试等功能，无缝兼容申威LLVM编译工具链。
+                            充分挖掘CPU硬件特性, 实现LLDB硬件观察点功能，匹配速度提升数十倍。
+                            ②完成申威GDB反向调试(Reverse Debugging)高级功能开发, 使SW64成为第4个成功支持的架构(仅次于x86/arm/ppc)。不断扩充强化GDB功能，实现
+                            watchpoint/catchpoint/gdbserver等功能支持，最终使得申威GDB testsuite测试集通过率达99.8%。
+                            ③完成Go语言专属调试器Delve开发，支持协程级精准调试。④带领新人完成Systemtap/Ltrace/Libunwind等工具研发。目前GDB/LLDB/Systemtap等工具已被阿里、统信、麒麟等几十家合厂商广泛使用，并开源至申威社区/欧拉社区/龙蜥社区。
                             <br>开源链接：<a href=https://developer.wxiat.cn/#/ecology/basicsoftware/detail?id=10015 class="break-link">GDB</a>
                             <a href=https://developer.wxiat.cn/#/ecology/basicsoftware/detail?id=10057 class="break-link">LLDB</a>
                             <a href=https://developer.wxiat.cn/#/ecology/basicsoftware/detail?id=10062 class="break-link">Delve</a>
@@ -843,20 +849,22 @@
                     </div>
 
                     <div class="info-item">
-                        <h3 class="info-title">申威AI芯片研发项目</h3>
+                        <h3 class="info-title">申威AI加速卡芯片研发项目</h3>
                         <p class="info-date">2025年6月 - 至今</p>
-                        <p class="info-description">项主要负责前端页面的设计与实现，提升了实际项目开发能力。
-                            <br>开源链接：<a href=https://developer.wxiat.cn/#/ecology/basicsoftware/detail?id=10015 class="break-link">GDB</a>
-                            <a href=https://developer.wxiat.cn/#/ecology/basicsoftware/detail?id=10057 class="break-link">LLDB</a>
+                        <p class="info-description">负责AI加速卡芯片中调试功能测试验证和调试器原型代码开发，主要基于硬件仿真器和FPGA平台开展，
+                            覆盖硬件断点、数据流/指令流匹配、HBM/SM读写、寄存器读写、运行状态控制等模块，
+                            发现硬件问题十余项，保障芯片功能设计正确性。同时开展与操作系统（驱动运行时接口）、
+                            编译器（device代码反汇编、dwarf调试信息）功能接口的联合开发和调试。
                         </p>
                     </div>
 
                     <div class="info-item">
                         <h3 class="info-title">申威“生态+AI”融合创新项目</h3>
                         <p class="info-date">2025年3月 - 2024年5月</p>
-                        <p class="info-description">独立负责研究探索申威平台开发者生态软件与大模型融合的可行方案，突破“调试器+大模型”技术融合壁垒，
-                            完成相关功能组件代码编写，在申威平台首次创新性实现将DeepSeek、ChatGPT等大模型接入Linux平台3大调试器(GDB/LLDB/Delve)中，
-                            并带领实习生实现将大模型接入内存分析工具Valgrind中，实现AI赋能基础工具软件，明显提升申威平台软件开发查错效率。
+                        <p class="info-description">负责研究探索申威平台开发者生态软件与大模型融合的可行方案，突破“调试器+大模型”技术融合壁垒，
+                            完成与LLM交互功能代码编写，在申威平台首次创新性实现将DeepSeek、ChatGPT等大模型接入Linux平台3大调试器(GDB/LLDB/Delve)中，
+                            并带领实习生实现将大模型接入内存分析工具Valgrind中。实现AI能力与调试器的原生级融合，避免“跨窗口、割裂式”的AI使用体验，
+                            通过AI赋能开发者生态工具，明显提升申威平台开发查错效率。
                             <br>效果展示链接：<a href=https://developer.wxiat.cn class="break-link">GDB接入ChatGPT</a>
                             <a href=https://developer.wxiat.cn class="break-link">LLDB接入DeepSeek</a>
                             <a href=https://developer.wxiat.cn class="break-link">Valgrind接入DeepSeek</a>
