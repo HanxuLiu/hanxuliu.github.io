@@ -899,21 +899,19 @@
 
                     <div class="info-item">
                         <h3 class="info-title">五、天翼云项目</h3>
-                        <p class="info-date">2024年3月 PRCR-JIT研发</p>
-                        <p class="info-description">负责正则表达式库PCRE中申威架构JIT模块开发，完成pcre-jit功能代码开发，实现对PCRE库中sljit即时编译器申威架构的从零开发及优化，
-                            使得申威平台可以启用jit模式进行正则表达式的匹配过程的加速，已提供给天翼云项目使用。
-                            实现各类寄存器、保存恢复上下文的约定，编写sljit_emit_enter、sljit_generate_code、sljit_emit_op2等
-40余个jit模块接口，支持SLJIT_MOV、SLJIT_ADD、SLJIT_XOR等50余种Sljit操作码，满足对应申威跳转/条件转移/存储装入/整数运算/整数移位指令等类型指令的运行。
-此外通过优化立即数加载、指令类型、跳转目的地址等方式以减少最终申威架构生成指令数约20%以提升匹配速率。功能测试集通过率100%。性能测试加速比15.23。
-                            <br>相关证明链接：<a href=https://developer.wxiat.cn class="break-link">查错记录</a>
-                            <a href=https://developer.wxiat.cn class="break-link">公司宣传报道</a>
+                        <p class="info-date">2024年3月 PCRE-JIT功能研发</p>
+                        <p class="info-description">负责正则表达式引擎PCRE中SW64架构即时编译JIT功能开发，实现对PCRE库
+                            sljit即时编译器中SW64架构的从零开发及优化，涉及寄存器分配和指令上下文保存恢复，编写
+                            sljit_emit_enter/generate_code/emit_op等40余个jit模块接口，支持SLJIT_MOV/ADD/XOR等50余
+                            种操作码，成功将PCRE生成的内部字节码转换为SW64架构机器码，功能测试集通过率100%，已提供给天翼云
+                            项目使用。此外通过优化立即数加载、跳转目的地址等方式减少最终生成指令数约20%，性能加速比达15.23。
                         </p>
 
-                        <p class="info-date">2024年7月 天翼云VPP服务适配coredump攻关查错</p>
-                        <p class="info-description">天翼云适配过程中出现vpp服务异常崩溃问题，历经两周排查定位到天翼云
-                            自研软件ctcc_monitor里对内存地址的非法篡改行为，深挖问题发现不同架构底层特性导致的问题，
-                            覆盖堆栈地址分配、共享地址非法覆写、 memset内存操作的粒度等方面。发现源于申威vpp移植代码中
-                            沿用x86架构硬编码的地址，导致与申威内存布局冲突，解决问题后使得项目追赶上计划进度。
+                        <p class="info-date">2024年7月 天翼云组件coredump查错</p>
+                        <p class="info-description">天翼云适配过程中出现vpp服务异常崩溃问题，排查天翼云某自研组件里对共享
+                            内存地址的非法篡改行为，深挖问题原因发现源于不同架构底层特性，涉及堆栈地址分配规则和memset内存操作粒度，
+                            通过内核态、用户态之间跨层联合调试，最终定位到组件代码中采用不合理地址配置，导致与SW64内存布局冲突，
+                            解决问题后使得项目追赶上计划进度。
                             <br>相关证明链接：<a href=https://developer.wxiat.cn class="break-link">查错记录</a>
                             <a href=https://developer.wxiat.cn class="break-link">公司宣传报道</a>
                         </p>
@@ -924,11 +922,11 @@
                 <!-- 个人特长卡片模块 -->
                 <div class="card" id="specialty-card">
                     <h2 class="card-title">个人技能和特长</h2>
-                    <p>熟悉计算机体系结构、LLVM代码框架和基本编译原理、熟悉C/C++/汇编。</p>
+                    <p>熟悉计算机体系结构、RISC指令集、LLVM代码框架和基本编译原理、熟悉C/C++/汇编。</p>
                     <p>熟练使用GDB/LLDB等Debugger工具、Vim/Git等开发工具，具备较强的问题排查定位能力。</p>
-                    <p>熟悉binutils工具集、make/cmake构建工具、rpm打包流程。</p>
-                    <p>拥有良好的团队协作能力，曾在多个项目中担任核心成员，开展联调和对接工作。</p>
-                    <p>具备较强的攻坚克难、钻研探索能力，能够快速承担新任务。</p>
+                    <p>熟悉编译工具链、binutils工具集、make/cmake构建工具、rpm打包及Linux开发流程。</p>
+                    <p>拥有良好的团队协作精神和沟通能力，曾在多个项目中担任核心成员，开展多次联调。</p>
+                    <p>具备较强的攻坚克难、钻研探索能力，能够快速承担新任务。乐于技术讨论和分享。</p>
                 </div>
 
                 <!-- 证书展示卡片 -->
