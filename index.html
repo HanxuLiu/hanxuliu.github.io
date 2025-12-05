@@ -241,6 +241,13 @@
                 margin-bottom: 0.5rem; /* 底部外边距 */
                 padding-bottom: 1.5rem; /* 底部内边距 */
             }
+            .timeline-date {
+                position: relative; /* 相对定位 */
+                font-size: 1.1rem;
+                color: #135886; /* 字体颜色 */
+                margin-bottom: 0.3rem; /* 底部外边距 */
+                padding-bottom: 0.3rem; /* 底部内边距 */
+            }
 
             /* 时间轴项目的圆点 */
             .timeline-item::before {
@@ -450,7 +457,7 @@
  /* 教育经历中新增的无序列表样式 */
 .custom-list {
     list-style: none; /* 移除浏览器默认的列表标记（如圆点、数字等） */
-    padding-left: 20px; /* 设置列表左侧内边距，为自定义点留出空间 */
+    padding-left: 15px; /* 设置列表左侧内边距，为自定义点留出空间 */
 }
 
 .custom-list li {
@@ -587,9 +594,10 @@
 
             /* 实习经历日期样式 */
             .info-date {
-                font-size: 1rem; /* 字体大小 */
-                color: #666; /* 字体颜色 */
+                font-size: 1.1rem; /* 字体大小 */
+                color: #135886; /* 字体颜色 */
                 margin-bottom: 0.5rem; /* 底部外边距 */
+                margin-top: 0.5rem; /* 顶部外边距 */
             }
 
             /* 工作经历和成果中的正文-描述样式 */
@@ -801,6 +809,12 @@
                                 <a href=https://hanxuliu.github.io/pdf-web/patent/patent_hpc.html class="break-link">《一种并行程序性能分析方法》</a></li>
                             <li>2篇软著《申威LLDB调试器软件》《申威Systemtap跟踪和探测工具软件》</li>
                             <li>计算机技术与软件专业技术资格：软件设计师（中级）认证</li>
+                            <li>
+                                3次培训授课
+                                <a href=https://hanxuliu.github.io/pdf-web/ppt/Debugging_and_Tuning.html class="break-link">《申威软件调试调优技术》</a>
+                                <a href=https://hanxuliu.github.io/pdf-web/ppt/Debugging_with_GDB_LLDB.html class="break-link">《从基础到高级调试——申威GDB&LLDB调试指南》</a>
+                                <a href=https://hanxuliu.github.io/pdf-web/ppt/Art_of_Debugging.html class="break-link">《探索调试之美——调试器原理、实践和技巧》</a>
+                            </li>
                 </ul>
                         </div>
                     </div>
@@ -885,7 +899,7 @@
 此外通过优化立即数加载、指令类型、跳转目的地址等方式以减少最终申威架构生成指令数约20%以提升匹配速率。功能测试集通过率100%。性能测试加速比15.23。
                             <br>相关证明链接：<a href=https://developer.wxiat.cn class="break-link">查错记录</a>
                             <a href=https://developer.wxiat.cn class="break-link">公司宣传报道</a>
-                        </p><br>
+                        </p>
 
                         <p class="info-date">2024年7月 天翼云VPP服务适配coredump攻关查错</p>
                         <p class="info-description">天翼云适配过程中出现vpp服务异常崩溃问题，历经两周排查定位到天翼云
