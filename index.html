@@ -821,7 +821,8 @@
                             ③完成申威GDB反向调试(Reverse Debugging)高级功能开发, 使SW64成为第4个成功支持的架构(仅次于x86/arm/ppc)。
                             不断扩充强化GDB功能，实现watchpoint/catchpoint/gdbserver等功能支持，最终使申威GDB testsuite测试集通过率达99.8%。
                             ④完成Go语言专属调试器Delve开发，支持协程级精准调试。
-                            ⑤带领新人完成Systemtap/Ltrace/Libunwind等工具研发。目前GDB/LLDB/Systemtap等工具已被阿里、统信、麒麟等几十家合厂商
+                            ⑤完成插桩工具Dyninst研发，实现申威平台的符号解析、指令解析、程序执行流程解析等功能支持。
+                            ⑥带领新人完成Systemtap/Ltrace/Libunwind等工具研发。目前GDB/LLDB/Systemtap等工具已被阿里、统信、麒麟等几十家合厂商
                             广泛使用，并已开源至申威社区/欧拉社区/龙蜥社区。
                             <br>开源链接：<a href=https://developer.wxiat.cn/#/ecology/basicsoftware/detail?id=10015 class="break-link">GDB</a>
                             <a href=https://developer.wxiat.cn/#/ecology/basicsoftware/detail?id=10057 class="break-link">LLDB</a>
@@ -877,31 +878,20 @@
                     <div class="info-item">
                         <h3 class="info-title">五、天翼云项目</h3>
                         <p class="info-date">2024年3月 PRCR-JIT研发</p>
-                        <p class="info-description">在天翼云适配项目中，出现vpp服务异崩溃问题。深挖出底层特性相关报错，覆盖堆栈地址分配、共享地址非法覆写、
-                            memset内存操作的粒度等方面，保障项目追赶上计划进度。
+                        <p class="info-description">负责正则表达式库PCRE中申威架构JIT模块开发，完成pcre-jit功能代码开发，实现对PCRE库中sljit即时编译器申威架构的从零开发及优化，
+                            使得申威平台可以启用jit模式进行正则表达式的匹配过程的加速，已提供给天翼云项目使用。
+                            实现各类寄存器、保存恢复上下文的约定，编写sljit_emit_enter、sljit_generate_code、sljit_emit_op2等
+40余个jit模块接口，支持SLJIT_MOV、SLJIT_ADD、SLJIT_XOR等50余种Sljit操作码，满足对应申威跳转/条件转移/存储装入/整数运算/整数移位指令等类型指令的运行。
+此外通过优化立即数加载、指令类型、跳转目的地址等方式以减少最终申威架构生成指令数约20%以提升匹配速率。功能测试集通过率100%。性能测试加速比15.23。
                             <br>相关证明链接：<a href=https://developer.wxiat.cn class="break-link">查错记录</a>
                             <a href=https://developer.wxiat.cn class="break-link">公司宣传报道</a>
                         </p><br>
 
                         <p class="info-date">2024年7月 天翼云VPP服务适配coredump攻关查错</p>
-                        <p class="info-description">在天翼云适配项目中，出现vpp服务异崩溃问题。深挖出底层特性相关报错，覆盖堆栈地址分配、共享地址非法覆写、
-                            memset内存操作的粒度等方面，保障项目追赶上计划进度。历经两周的全身心投入排查下，
-                            定位到天翼云自研软件ctcc_monitor里对内存地址的非法篡改行为，
-                            继续深挖问题原因发现源于申威vpp移植代码中沿用x86架构硬编码的地址，导致与申威内存布局冲突。
-                            找到报错根源，该问题迎刃而解，项目进度恢复正常。
-                            <br>相关证明链接：<a href=https://developer.wxiat.cn class="break-link">查错记录</a>
-                            <a href=https://developer.wxiat.cn class="break-link">公司宣传报道</a>
-                        </p>
-                    </div>
-
-                    <div class="info-item">
-                        <h3 class="info-title">六、移动云项目PRCR-JIT组件研发</h3>
-                        <p class="info-date">2023年9月 天翼云VPP服务适配coredump查粗</p>
-                        <p class="info-description">在天翼云适配项目中，出现vpp服务异崩溃问题。深挖出底层特性相关报错，
-                            覆盖堆栈地址分配、共享地址非法覆写、
-                            memset内存操作的粒度等方面，保障项目追赶上计划进度。
-                            完成插桩工具Dyninst移植工作，攻克了申威架构目标文件符号解析、指令解析、程序流程分析等难点，
-                            实现对申威目标文件的符号解析、指令解析、程序执行流程解析等功能支持。
+                        <p class="info-description">天翼云适配过程中出现vpp服务异常崩溃问题，历经两周排查定位到天翼云
+                            自研软件ctcc_monitor里对内存地址的非法篡改行为，深挖问题发现不同架构底层特性导致的问题，
+                            覆盖堆栈地址分配、共享地址非法覆写、 memset内存操作的粒度等方面。发现源于申威vpp移植代码中
+                            沿用x86架构硬编码的地址，导致与申威内存布局冲突，解决问题后使得项目追赶上计划进度。
                             <br>相关证明链接：<a href=https://developer.wxiat.cn class="break-link">查错记录</a>
                             <a href=https://developer.wxiat.cn class="break-link">公司宣传报道</a>
                         </p>
