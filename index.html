@@ -133,6 +133,15 @@
                 margin-bottom: 1.5rem; /* 底部外边距 */
             }
 
+            /* 英文名样式-提示语 */
+            .english-name-warn {
+                font-size: 1.0rem; /* 字体大小 */
+                color: rgb(190, 190, 190); /* 字体颜色 */
+                text-align: center; /* 文本居中 */
+                margin-top: 1rem;
+                margin-bottom: 0rem; /* 底部外边距 */
+            }
+
             /* 联系方式样式 */
             .contact-list {
                 margin-top: 0rem; /* 顶部外边距 */
@@ -385,10 +394,6 @@
                 color: inherit; /* 继承父元素颜色 */
                 text-decoration: none; /* 去除下划线 */
             }
-
-
-
-
 
 /* 个人信息卡片 - 两栏布局样式 */
 #personal-info-card {
@@ -714,6 +719,9 @@
                             -->
                         </div>
                     </div>
+
+                    <!-- 采用英文名样式，写提示 -->
+                    <p class="english-name-warn">【温馨提示：点击链接可查看详细内容，建议电脑端查看】</p>  
                 </div>
             </section>
 
@@ -801,16 +809,13 @@
                             <div class="timeline-date">2020.6 - 至今</div>
                             <h3 class="timeline-title">无锡先进技术研究院 - 技术研发副主管</h3>
                             <br><p class="info-description-1">先后在语言编译研发部(编译工具链研发工程师)、生态软件研发部(基础软件研发工程师)两个部门工作,
-                                完成申威GDB反向调试(Reverse Debugging)高级功能开发, 使SW64成为第4个成功支持的架构(仅次于x86/arm/ppc);
-                                丰富了gdb的版本谱系，迄今为止，申威平台已具备gdb7.12/8.2.1/9.1/10.1共4个版本，已覆盖申威421、6A、6B、8A、太湖-1等平台。
-                                完成申威LLDB框架设计和功能代码编写, 从零突破首次实现SW64架构支持; 充分挖掘CPU硬件特性, 实现LLDB硬件观察点功能，
-                                匹配速度提升数十倍. 突破“调试工具+大模型”技术融合探索，实现AI赋能工作效率. 完成申威插桩工具Dyninst、图形化调优工具HPCToolkit研发;
-                                带领新人完成申威Systemtap、Ltrace工具开发. 累计开展3次以调试调优为主题的技术培训授课，分享软件调试技巧，提升同事软件开发效率.
-                                累计向申威社区、厂商、部门内外同事提供调试技术支持60+次，解决开发者用户遇到的调试难题80+项.
-                                实现了取得了从“职场小白->技术骨干->牵头骨干”的个人进步和成长. 目前正带领3人开展申威AI芯片研发项目攻关，
-                                完成芯片调试和性能计数器功能验证, 已实现面向AI卡的debugger和profiler代码雏形.，输出技术文档十余篇</p><br>
+                                基于申威自主架构，完成GDB、LLDB、Delve调试器研发，不断完善强化高级功能，丰富了申威平台调试器版本谱系，覆盖服务器、桌面、嵌入式3大平台。
+                                突破“调试工具+大模型”技术融合，实现AI赋能。完成正则表达式引擎PCRE中申威架构即时编译JIT功能开发，完成申威插桩工具Dyninst研发。
+                                带领新人完成申威Systemtap、Ltrace工具开发。累计开展3次以调试调优为主题的技术分享；累计输出技术文档20+篇；累计向申威社区、厂商、部门内外
+                                同事提供调试技术支持60+次，解决开发者用户遇到的调试难题80+项。目前正带领3人开展申威AI芯片软件栈中调试调优工具开发，已实现面向AI卡的debugger和profiler代码雏形。
+                                回顾5年工作历程，取得了从“职场小白->技术骨干->牵头骨干”的个人进步和成长。</p><br>
                             <ul class="custom-list">
-                            <li>申威AI芯片“攻关先锋”奖、单位“年度先进个人”奖、“大干之星”奖</li>
+                            <li>申威AI芯片“攻关先锋”奖、公司“年度先进个人”奖、“大干之星”奖</li>
                             <li>1篇论文 <a href=https://hanxuliu.github.io/pdf-web/paper/paper_gdb.html class="break-link">《面向申威平台的反向调试技术研究》</a></li>
                             <li>3篇专利<a href=https://hanxuliu.github.io/pdf-web/patent/patent_lldb.html class="break-link">《一种硬件观察点调试方法》</a>
                                 <a href=https://hanxuliu.github.io/pdf-web/patent/patent_gdb.html class="break-link">《一种程序调试方法》</a>
@@ -863,7 +868,7 @@
                             数据流/指令流匹配、HBM/SM内存读写、寄存器读写、运行状态控制等模块，
                             目前累计发现硬件设计问题十余项，保障芯片功能正确性。
                             同时开展与操作系统、编译器功能接口的联合开发和调试，涉及OS里新增驱动运行时接口、
-                            LLVM里新增device代码反汇编接口和设备端dwarf调试信息。
+                            LLVM里新增device代码反汇编接口和dwarf调试信息。
                         </p>
                     </div>
 
