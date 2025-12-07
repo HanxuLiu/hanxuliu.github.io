@@ -839,7 +839,15 @@
                     <h2 class="card-title">项目经历</h2>
 
                     <div class="info-item">
-                        <h3 class="info-title">一、自主架构服务器芯片研发项目</h3>
+                        <h3 class="info-title">一、申威AI加速卡芯片研发项目</h3>
+                        <p class="info-date">2025年6月 - 至今</p>
+                        <p class="info-description">负责AI加速卡芯片中调试模块测试验证和调试器原型开发。基于FPGA平台开展调试功能硅前测试验证，覆盖硬件断点、性能计数器、数据流/指令流匹配、HBM/SM内存读写、寄存器读写、运行状态控制等模块，
+                            目前累计发现硬件设计问题十余项，保障芯片功能正确性。同时开展与操作系统、编译器功能接口的联合开发和调试，涉及OS里新增驱动运行时接口、LLVM里新增device代码反汇编接口和dwarf调试信息。目前已实现面向申威AI卡的debugger和profiler代码雏形。
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3 class="info-title">二、申威自主架构服务器芯片研发项目</h3>
                         <p class="info-date">2021年12月 - 2024年12月</p>
                         <p class="info-description">负责子课题《面向自主架构的开发支撑技术》研发，基于申威自主指令集架构SW64：①完成申威LLDB框架设计、功能代码编写、测试集验证，从零突破首次实现SW64架构支持；解决LLDB与Clang表达式解析器兼容问题，实现对 LLVM JIT 和 Disassembler 模块集成，成功支持断点/反汇编/查看寄存器/查看内存/远程调试/多线程调试等功能，无缝兼容申威LLVM编译工具链。②充分挖掘CPU硬件特性, 实现LLDB硬件观察点功能，匹配速度提升数十倍。③完成申威GDB反向调试(Reverse Debugging)高级功能开发, 使SW64成为第4个成功支持的架构(仅次于x86/arm/ppc)。
                             不断扩充强化GDB功能，实现watchpoint/catchpoint/gdbserver等功能支持，最终使申威GDB testsuite测试集通过率达99.8%。④完成Go语言专属调试器Delve开发，支持协程级精准调试。⑤完成插桩工具Dyninst研发，实现申威平台的符号解析、指令解析、程序执行流程解析等功能支持。⑥带领新人完成Systemtap/Ltrace/Libunwind等工具研发。目前GDB/LLDB/Systemtap等工具已被阿里、统信、麒麟等几十家合厂商广泛使用，并已开源至申威社区/欧拉社区/龙蜥社区。
@@ -853,14 +861,6 @@
                     </div>
 
                     <div class="info-item">
-                        <h3 class="info-title">二、申威AI加速卡芯片研发项目</h3>
-                        <p class="info-date">2025年6月 - 至今</p>
-                        <p class="info-description">负责AI加速卡芯片中调试模块测试验证和调试器原型开发。基于FPGA平台开展调试功能硅前测试验证，覆盖硬件断点、性能计数器、数据流/指令流匹配、HBM/SM内存读写、寄存器读写、运行状态控制等模块，
-                            目前累计发现硬件设计问题十余项，保障芯片功能正确性。同时开展与操作系统、编译器功能接口的联合开发和调试，涉及OS里新增驱动运行时接口、LLVM里新增device代码反汇编接口和dwarf调试信息。目前已实现面向申威AI卡的debugger和profiler代码雏形。
-                        </p>
-                    </div>
-
-                    <div class="info-item">
                         <h3 class="info-title">三、申威“生态+AI”融合创新项目</h3>
                         <p class="info-date">2025年3月 - 2024年5月</p>
                         <p class="info-description">负责探索申威平台开发者生态软件与大模型的融合方案，突破“调试器+大模型”技术融合壁垒，完成与LLM交互功能代码编写，在申威平台首次
@@ -870,16 +870,7 @@
                     </div>
 
                     <div class="info-item">
-                        <h3 class="info-title">四、阿里数据工程项目攻关查错</h3>
-                        <p class="info-date">2022年9月 - 2022年10月</p>
-                        <p class="info-description">负责排查阿里大数据odps集群服务调用folly和boost库时coredump报错。深挖出一系列申威底层特性相关错误，涉及编译器优化、上下文切换、寄存器配置等方面。通过将odps集群模块解耦， 并自编测试用例依次验证，最终定位出两方面原因：①boost协程汇编实现时忽略了SW64架构底层操作差异性，导致协程上下文信息的错误保存和恢复；
-                            ②通过调试汇编代码定位到，odps产品联合编译时隐含指定了优化选项，导致folly库编译时指令优化异常。出差北京展开为期29天的攻关，成功解决该问题，推动了阿里后续众多大数据产品线联调，解决阻碍项目进展2个多月的卡点。
-                            <br><a href=https://hanxuliu.github.io/work-achievement/report/ali_boost_coredump.html class="break-link">查错总结报告</a>
-                        </p>
-                    </div>
-
-                    <div class="info-item">
-                        <h3 class="info-title">五、天翼云项目</h3>
+                        <h3 class="info-title">四、天翼云项目</h3>
                         <p class="info-date">2024年3月 - 2024年6月 PCRE-JIT功能研发</p>
                         <p class="info-description">负责正则表达式引擎PCRE中SW64架构即时编译JIT功能开发，实现对PCRE库sljit即时编译器中SW64架构的从零开发及优化，涉及寄存器分配和指令上下文保存恢复，编写sljit_generate_code/emit_op等40余个jit模块接口，支持SLJIT_MOV/ADD等50余种操作码，成功将PCRE生成的内部字节码转换为SW64架构机器码，功能测试集通过率100%，已提供给天翼云项目使用。此外通过优化立即数加载、跳转目的地址等方式减少最终生成指令数约20%，性能加速比达15.23。
                         </p>
@@ -891,6 +882,14 @@
                         </p>
                     </div>
 
+                    <div class="info-item">
+                        <h3 class="info-title">五、阿里数据工程项目攻关查错</h3>
+                        <p class="info-date">2022年9月 - 2022年10月</p>
+                        <p class="info-description">负责排查阿里大数据odps集群服务调用folly和boost库时coredump报错。深挖出一系列申威底层特性相关错误，涉及编译器优化、上下文切换、寄存器配置等方面。通过将odps集群模块解耦， 并自编测试用例依次验证，最终定位出两方面原因：①boost协程汇编实现时忽略了SW64架构底层操作差异性，导致协程上下文信息的错误保存和恢复；
+                            ②通过调试汇编代码定位到，odps产品联合编译时隐含指定了优化选项，导致folly库编译时指令优化异常。出差北京展开为期29天的攻关，成功解决该问题，推动了阿里后续众多大数据产品线联调，解决阻碍项目进展2个多月的卡点。
+                            <br><a href=https://hanxuliu.github.io/work-achievement/report/ali_boost_coredump.html class="break-link">查错总结报告</a>
+                        </p>
+                    </div>
                 </div>
 
                 <!-- 个人特长卡片模块 -->
